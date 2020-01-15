@@ -28,3 +28,27 @@ C:\react\myorg>ng add @nrwl/angular --defaults
 C:\react\myorg>npm audit fix      <<< fixed 0 of 5 vulnerabilities in 899799 scanned packages
 C:\react\myorg>npm audit
 C:\react\myorg>npm install --save-dev jest-preset-angular@8.0.0     <<< Suggestion from npm audit
+
+
+C:\react\myorg>npm ls tree-kill
+myorg@0.0.0 C:\react\myorg
++-- @angular-devkit/build-angular@0.803.22
+| +-- @ngtools/webpack@8.3.22
+| | `-- tree-kill@1.2.1  deduped
+| `-- tree-kill@1.2.1
+`-- @nrwl/cypress@8.11.0
+  `-- tree-kill@1.2.1  deduped
+
+Manually fix the tree-kill volunerability by:
+npm install tree-kill
+> find the dependency hash in the library. which is
+    "tree-kill": {
+      "version": "1.2.2",
+      "resolved": "https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz",
+      "integrity": "sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A=="
+    },
+> Replace it in package-lock.json
+> and update all versions of
+tree-kill": "1.2.1",
+to
+"tree-kill": "1.2.2",
