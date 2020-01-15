@@ -25,3 +25,6 @@ npx: installed 169 in 21.611s
 
 C:\react\myorg>ng add @nrwl/angular --defaults
 
+C:\react\myorg>npm audit fix      <<< fixed 0 of 5 vulnerabilities in 899799 scanned packages
+C:\react\myorg>npm audit
+C:\react\myorg>npm install --save-dev jest-preset-angular@8.0.0     <<< Suggestion from npm audit
