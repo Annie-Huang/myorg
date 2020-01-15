@@ -1,9 +1,10 @@
 https://nx.dev/web/guides/cli
 https://nrwl.io/
 https://nx.dev/web/tutorial/01-create-application
+
 https://nx.dev/angular/getting-started/what-is-nx
 https://nx.dev/angular/tutorial/01-create-application
-
+https://nx.dev/angular/fundamentals/build-full-stack-applications
 
 
 
@@ -52,3 +53,13 @@ npm install tree-kill
 tree-kill": "1.2.1",
 to
 "tree-kill": "1.2.2",
+
+
+
+C:\react\myorg>ng g @nrwl/angular:application todos
+? Which stylesheet format would you like to use?
+  CSS
+> SASS(.scss)  [ http://sass-lang.com   ]
+  Stylus(.styl)[ http://stylus-lang.com ]
+  LESS         [ http://lesscss.org     ]
+? Would you like to configure routing for this application? (y/N) N
