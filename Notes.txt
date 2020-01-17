@@ -6,7 +6,7 @@ https://nx.dev/angular/getting-started/what-is-nx
 https://nx.dev/angular/tutorial/01-create-application
 https://nx.dev/angular/fundamentals/build-full-stack-applications
 
-
+https://github.com/Annie-Huang/myorg
 
 =======================================================
 
@@ -108,3 +108,8 @@ myorg/
 ├── tsconfig.json
 ├── tslint.json
 └── README.md
+
+C:\react\myorg>ng serve todos
+
+
+
