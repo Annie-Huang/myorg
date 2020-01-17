@@ -8,6 +8,13 @@ https://nx.dev/angular/fundamentals/build-full-stack-applications
 
 https://github.com/Annie-Huang/myorg
 
+
+C:\react\myorg>ng serve todos       <<< http://localhost:4200/
+C:\react\myorg>ng serve api         <<< http://localhost:3333/api/todos     << if you only go to
+
+
+
+
 =======================================================
 
 C:\react>npx create-nx-workspace@latest myorg
@@ -157,5 +164,6 @@ myorg/
 
 ----------------------------------------------------
 
+C:\react\myorg>ng serve api     <<< http://localhost:3333/api
 
 
