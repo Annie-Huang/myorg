@@ -17,6 +17,24 @@ C:\react\myorg>ng serve api         <<< http://localhost:3333/api/todos     << i
 Restart TS server: invalidating caches (File | Invalidate caches, Invalidate and restart)
 
 
+
+
+C:\react>npx create-nx-workspace@latest myorg
+C:\react\myorg>ng add @nrwl/angular --defaults
+C:\react\myorg>npm audit fix      <<< fixed 0 of 5 vulnerabilities in 899799 scanned packages
+C:\react\myorg>npm audit
+C:\react\myorg>npm install --save-dev jest-preset-angular@8.0.0     <<< Suggestion from npm audit
+C:\react\myorg>npm ls tree-kill
+C:\react\myorg>ng g @nrwl/angular:application todos
+C:\react\myorg>ng serve todos
+C:\react\myorg>ng e2e todos-e2e --watch
+C:\react\myorg>ng e2e todos-e2e --headless
+C:\react\myorg>ng add @nrwl/nest
+C:\react\myorg>ng g @nrwl/nest:app api --frontendProject=todos
+C:\react\myorg>ng serve api     <<< http://localhost:3333/api
+C:\react\myorg>ng g @nrwl/workspace:lib data
+C:\react\myorg>ng g @nrwl/angular:lib ui
+
 =======================================================
 
 C:\react>npx create-nx-workspace@latest myorg
@@ -230,5 +248,26 @@ You will need to restart the TS server so that the new @myorg/data package is re
 This may need to be done every time a new workspace library is added:
     invalidating caches (File | Invalidate caches, Invalidate and restart)                  <<< Good info, I often got error line under import { XX } from '@AAA/BBB';
     https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000770044-Typescript-inspections-sometimes-unreliable-and-or-slow?page=1#comments
+
+
+----------------------------------------------------
+
+
+C:\react\myorg>ng g @nrwl/angular:lib ui
+? Which stylesheet format would you like to use? (Use arrow keys)
+> CSS
+  SASS(.scss)  [ http://sass-lang.com   ]
+  Stylus(.styl)[ http://stylus-lang.com ]
+  LESS         [ http://lesscss.org     ]
+
+
+
+
+
+
+
+
+
+
 
 
