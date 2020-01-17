@@ -8,9 +8,15 @@
 </header>
 <main>
   <h1>Todos</h1>
+
   <ul>
     <li *ngFor="let t of todos" class="todo">{{ t.title }}</li>
   </ul>
+
+  <button id="add-todo" (click)="addTodo()">Add Todo</button>
+
+
+
   <h2>Resources &amp; Tools</h2>
   <p>
     Thank you for using and showing some ♥ for Nx.
