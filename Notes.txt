@@ -115,3 +115,6 @@ C:\react\myorg>ng e2e todos-e2e --watch
 C:\react\myorg>ng e2e todos-e2e --headless
 
 C:\react\myorg>ng add @nrwl/nest
+C:\react\myorg>ng g @nrwl/nest:app api --frontendProject=todos
+? In which directory should the node application be generated?    <<< just click Enter for this question...
+
