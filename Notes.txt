@@ -114,4 +114,4 @@ C:\react\myorg>ng serve todos
 C:\react\myorg>ng e2e todos-e2e --watch
 C:\react\myorg>ng e2e todos-e2e --headless
 
-
+C:\react\myorg>ng add @nrwl/nest
