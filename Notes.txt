@@ -193,4 +193,8 @@ proxy.conf.json:
 
 C:\react\myorg>ng serve api     <<< http://localhost:3333/api
 
+C:\react\myorg>ng g @nrwl/workspace:lib data
 
+Both the backend and the frontend define the Todo interface.
+The interface is in sync now, but in a real application, over time, it will diverge, and, as a result, runtime errors will creep in.
+You should share this interface between the backend and the frontend. In Nx, you can do this by creating a library.
