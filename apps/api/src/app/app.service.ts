@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { Todo } from '@myorg/data';
 
-interface Todo {
-  title: string;
-}
+// interface Todo {
+//   title: string;
+// }
 
 // Services in Nest are responsible for the business logic
 @Injectable()

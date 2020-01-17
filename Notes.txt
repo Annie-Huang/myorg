@@ -1,18 +1,20 @@
 https://nx.dev/web/guides/cli
 https://nrwl.io/
 https://nx.dev/web/tutorial/01-create-application
-
 https://nx.dev/angular/getting-started/what-is-nx
 https://nx.dev/angular/tutorial/01-create-application
 https://nx.dev/angular/fundamentals/build-full-stack-applications
 
 https://github.com/Annie-Huang/myorg
 
+https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000770044-Typescript-inspections-sometimes-unreliable-and-or-slow?page=1#comments
+
 
 C:\react\myorg>ng serve todos       <<< http://localhost:4200/
 C:\react\myorg>ng serve api         <<< http://localhost:3333/api/todos     << if you only go to
 
-Up to https://nx.dev/angular/tutorial/06-proxy
+
+Restart TS server: invalidating caches (File | Invalidate caches, Invalidate and restart)
 
 
 =======================================================
@@ -198,3 +200,35 @@ C:\react\myorg>ng g @nrwl/workspace:lib data
 Both the backend and the frontend define the Todo interface.
 The interface is in sync now, but in a real application, over time, it will diverge, and, as a result, runtime errors will creep in.
 You should share this interface between the backend and the frontend. In Nx, you can do this by creating a library.
+
+myorg/
+├── apps/
+│   ├── todos/
+│   ├── todos-e2e/
+│   └── api/
+├── libs/
+│   └── data/
+│       ├── src/
+│       │   ├── lib/
+│       │   │   └── data.ts
+│       │   └── index.ts
+│       ├── jest.conf.js
+│       ├── tsconfig.app.json
+│       ├── tsconfig.json
+│       ├── tsconfig.spec.json
+│       └── tslint.json
+├── workspace.json
+├── nx.json
+├── package.json
+├── tools/
+├── tsconfig.json
+└── tslint.json
+
+
+After you import { Todo } from '@myorg/data';
+You will need to restart the TS server so that the new @myorg/data package is recognised.
+This may need to be done every time a new workspace library is added:
+    invalidating caches (File | Invalidate caches, Invalidate and restart)                  <<< Good info, I often got error line under import { XX } from '@AAA/BBB';
+    https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000770044-Typescript-inspections-sometimes-unreliable-and-or-slow?page=1#comments
+
+
