@@ -24,6 +24,8 @@ npx: installed 169 in 21.611s
   Nx           [Extensible CLI for JavaScript and TypeScript applications]
 > Angular CLI  [Extensible CLI for Angular applications. Recommended for Angular projects.]
 
+----------------------------------------------------
+
 C:\react\myorg>ng add @nrwl/angular --defaults
 
 C:\react\myorg>npm audit fix      <<< fixed 0 of 5 vulnerabilities in 899799 scanned packages
@@ -54,6 +56,7 @@ tree-kill": "1.2.1",
 to
 "tree-kill": "1.2.2",
 
+----------------------------------------------------
 
 
 C:\react\myorg>ng g @nrwl/angular:application todos
@@ -109,6 +112,7 @@ myorg/
 ├── tslint.json
 └── README.md
 
+----------------------------------------------------
 
 C:\react\myorg>ng serve todos
 C:\react\myorg>ng e2e todos-e2e --watch
@@ -117,4 +121,41 @@ C:\react\myorg>ng e2e todos-e2e --headless
 C:\react\myorg>ng add @nrwl/nest
 C:\react\myorg>ng g @nrwl/nest:app api --frontendProject=todos
 ? In which directory should the node application be generated?    <<< just click Enter for this question...
+
+It will generate this structure:
+myorg/
+├── apps/
+│   ├── todos/
+│   ├── todos-e2e/
+│   └── api/
+│       ├── src/
+│       │   ├── app/
+│       │   │   ├── app.controller.ts
+│       │   │   ├── app.controller.spec.ts
+│       │   │   ├── app.module.ts
+│       │   │   ├── app.service.ts
+│       │   │   └── app.service.spec.ts
+│       │   ├── assets/
+│       │   ├── environments/
+│       │   │   ├── environment.ts
+│       │   │   └── environment.prod.ts
+│       │   └── main.ts
+│       ├── jest.conf.js
+│       ├── proxy.conf.json
+│       ├── tsconfig.app.json
+│       ├── tsconfig.json
+│       ├── tsconfig.spec.json
+│       └── tslint.json
+├── libs/
+├── angular.json
+├── nx.json
+├── package.json
+├── tools/
+├── tsconfig.json
+└── tslint.json
+
+
+----------------------------------------------------
+
+
 
