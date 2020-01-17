@@ -12,7 +12,8 @@ interface Todo {
 })
 export class AppComponent {
   title = 'todos';
-  todos: Todo[] = [{ title: 'Todo 1' }, { title: 'Todo 2' }];
+  // todos: Todo[] = [{ title: 'Todo 1' }, { title: 'Todo 2' }];
+  todos: Todo[];
 
   constructor(private http: HttpClient) {
     this.fetch();
@@ -24,7 +25,7 @@ export class AppComponent {
 
   addTodo() {
     this.todos.push({
-      title: `New todo ${Math.floor(Math.random() * 1000)}`
+      title: `New todo From FrontEnd ${Math.floor(Math.random() * 1000)}`
     });
   }
 }

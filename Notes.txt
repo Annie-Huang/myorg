@@ -12,7 +12,7 @@ https://github.com/Annie-Huang/myorg
 C:\react\myorg>ng serve todos       <<< http://localhost:4200/
 C:\react\myorg>ng serve api         <<< http://localhost:3333/api/todos     << if you only go to
 
-
+Up to https://nx.dev/angular/tutorial/06-proxy
 
 
 =======================================================
@@ -160,6 +160,33 @@ myorg/
 ├── tools/
 ├── tsconfig.json
 └── tslint.json
+
+
+--frontendProject=todos
+It created a proxy configuration that allows the Angular application to talk to the API in development.
+In angular.json and find the serve target of the todos app.
+{
+  "serve": {
+    "builder": "@angular-devkit/build-angular:dev-server",
+    "options": {
+      "browserTarget": "todos:build",
+      "proxyConfig": "apps/todos/proxy.conf.json"
+    },
+    "configurations": {
+      "production": {
+        "browserTarget": "todos:build:production"
+      }
+    }
+  }
+}
+proxy.conf.json:
+{
+  "/api": {
+    "target": "http://localhost:3333",
+    "secure": false
+  }
+}
+
 
 
 ----------------------------------------------------
