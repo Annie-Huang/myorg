@@ -98,7 +98,7 @@ myorg/
 │       │       └── index.ts
 │       ├── cypress.json
 │       ├── tsconfig.e2e.json
-│       ├── tsconfig.json
+│       ├── tsconfig.jsonp
 │       └── tslint.json
 ├── libs/
 ├── tools/
@@ -112,5 +112,6 @@ myorg/
 
 C:\react\myorg>ng serve todos
 C:\react\myorg>ng e2e todos-e2e --watch
+C:\react\myorg>ng e2e todos-e2e --headless
 
 
