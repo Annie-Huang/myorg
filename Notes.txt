@@ -109,7 +109,8 @@ myorg/
 ├── tslint.json
 └── README.md
 
-C:\react\myorg>ng serve todos
 
+C:\react\myorg>ng serve todos
+C:\react\myorg>ng e2e todos-e2e --watch
 
 
