@@ -15,6 +15,7 @@ https://github.com/thymikee/jest-preset-angular/releases/tag/v8.0.0
 https://nx.dev/angular/fundamentals/use-modern-tools
 https://nx.dev/angular/fundamentals/build-full-stack-applications
 https://nx.dev/angular/fundamentals/monorepos-automation
+https://nx.dev/react/guides/cli
 
 
 C:\react\myorg>ng serve todos       <<< http://localhost:4200/
@@ -57,16 +58,40 @@ C:\react\myorg>npm run affected -- --target=invalid --base=master
 
 ------------------------
 
+CLI:
+npm install -g @nrwl/cli
+yarn global add @nrwl/cli
+
+list:
+nx list
+nx list @nrwl/web                     <<< list the schematics within a specific collection :
+
+Workspace:
+npx --ignore-existing create-nx-workspace happynrwl
+npx --ignore-existing create-nx-workspace happynrwl --preset=next
+
+Update nx:
+nx migrate @nrwl/workspace
+nx migrate @nrwl/workspace@version                                  # you can also specify version
+nx migrate --run-migrations=migrations.json
+nx migrate @nrwl/workspace --to="jest@22.0.0,cypress:3.4.0"
+nx migrate @nrwl/workspace --to="@nrwl/jest@8.0.0"                  <<<< Nx uses currently installed packages to calculate what migrations need to run. You can override them like this
+git reset --hard                                                    # Reset any changes
+git clean -fd                                                       # Delete newly added files and directories
+
+-----------
+
 Jest:
 ng g application frontend             <<< By default, Nx uses Jest for both Angular and React and Node.js applications
 nx g @nrwl/react:app frontend
+
 
 Karma:
 ng g @nrwl/angular:application frontend --unit-test-runner=karma.
 
 Cypress:
 nx g @nrwl/react:application          <<< By default, when creating a new React application, Nx uses Cypress to create the e2e tests project.
-
+nx g @nrwl/web:app frontend
 
 Angular:
 yarn add --dev @nrwl/angular
@@ -88,6 +113,7 @@ React:
 yarn add --dev @nrwl/react
 ng add @nrwl/react                          # Add React Capabilities to a workspace
 ng g @nrwl/react:application myapp          # Generate a React Application
+nx generate @nrwl/react:application myapp --style=scss
 ng g @nrwl/react:library mylib              # Generate a React Library
 
 
@@ -101,6 +127,7 @@ nx g @nrwl/angular:library mylib            # Generate an Angular Library
 
 React Libraries:
 nx g @nrwl/react:library mylib              # Generate a React Library
+nx g @nrwl/react:lib shared-components
 
 Typescript Libraries:
 ng g @nrwl/workspace:library mylib          # Generate a Typescript Library
@@ -149,6 +176,7 @@ nx g @nrwl/next:application tasks
 
 Using Storybook
 nx g @nrwl/angular:storybook-configuration project-name
+nx g @nrwl/react:storybook-configuration project-name
 nx run project-name:storybook
 nx run project-name-e2e:e2e
 
