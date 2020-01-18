@@ -7,6 +7,8 @@ https://nx.dev/angular/fundamentals/build-full-stack-applications
 
 https://github.com/Annie-Huang/myorg
 
+https://connect.nrwl.io/app/dashboard
+
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000770044-Typescript-inspections-sometimes-unreliable-and-or-slow?page=1#comments
 https://github.com/nrwl/nx/issues/1979
 https://github.com/thymikee/jest-preset-angular/releases/tag/v8.0.0
