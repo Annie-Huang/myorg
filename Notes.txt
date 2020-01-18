@@ -58,8 +58,8 @@ C:\react\myorg>npm run affected -- --target=invalid --base=master
 ------------------------
 
 Jest:
-By default, Nx uses Jest for both Angular and Node.js applications
-ng g application frontend
+ng g application frontend             <<< By default, Nx uses Jest for both Angular and React and Node.js applications
+nx g @nrwl/react:app frontend
 
 Configure Karma, if you choose karma:
 ng g @nrwl/angular:application frontend --unit-test-runner=karma.
@@ -121,6 +121,11 @@ ng g @nrwl/express:application api          # Create an Express Application
 Using Other Frameworks:
 ng add @nrwl/node # Add Node Capabilities to a workspace
 ng g @nrwl/node:application api # Create a Node Application
+
+
+Next.js:
+yarn add --dev @nrwl/next
+nx g @nrwl/next:application tasks
 
 
 Using Storybook
