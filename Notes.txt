@@ -306,4 +306,18 @@ e.g. in ui.module.ts
   exports: [TodosComponent]
 })
 
-
+myorg/
+...
+├── libs/
+│   ├── data/
+│   └── ui/
+│       ├── src/
+│       │   ├── lib/
+│       │   │   ├── todos/
+│       │   │   │   ├── todos.component.css
+│       │   │   │   ├── todos.component.html
+│       │   │   │   ├── todos.component.spec.ts
+│       │   │   │   └── todos.component.ts
+│       │   │   ├── ui.module.spec.ts
+│       │   │   └── ui.module.ts
+...
