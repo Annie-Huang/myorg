@@ -96,6 +96,12 @@ yarn add --dev @nrwl/web                    # Add Web capabilities to a workspac
 nx g @nrwl/web:application myapp            # Generate a Web application
 
 
+Angular Libraries:
+nx g @nrwl/angular:library mylib            # Generate an Angular Library
+
+React Libraries:
+nx g @nrwl/react:library mylib              # Generate a React Library
+
 Typescript Libraries:
 ng g @nrwl/workspace:library mylib          # Generate a Typescript Library
 
