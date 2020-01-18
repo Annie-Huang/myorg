@@ -260,11 +260,38 @@ C:\react\myorg>ng g @nrwl/angular:lib ui
   Stylus(.styl)[ http://stylus-lang.com ]
   LESS         [ http://lesscss.org     ]
 
+Libraries are not just a way to share code in Nx. They are also useful for factoring out code into small units with a well-defined public API.
+
+Public API
+Every library has an index.ts file, which defines its public API.
+Other applications and libraries should only access what the index.ts exports. Everything else in the library is private.
 
 
+myorg/
+├── apps/
+│   ├── todos/
+│   ├── todos-e2e/
+│   └── api/
+├── libs/
+│   ├── data/
+│   └── ui/
+│       ├── src/
+│       │   ├── lib/
+│       │   │   ├── ui.module.spec.ts
+│       │   │   └── ui.module.ts
+│       │   └── index.ts
+│       ├── jest.conf.js
+│       ├── tsconfig.app.json
+│       ├── tsconfig.json
+│       ├── tsconfig.spec.json
+│       └── tslint.json
+├── nx.json
+├── package.json
+├── tools/
+├── tsconfig.json
+└── tslint.json
 
-
-
+----------------------------------------------------
 
 
 
