@@ -34,6 +34,8 @@ C:\react\myorg>ng g @nrwl/nest:app api --frontendProject=todos
 C:\react\myorg>ng serve api     <<< http://localhost:3333/api
 C:\react\myorg>ng g @nrwl/workspace:lib data
 C:\react\myorg>ng g @nrwl/angular:lib ui
+C:\react\myorg>ng g component todos --project=ui --export
+
 
 =======================================================
 
@@ -294,7 +296,14 @@ myorg/
 ----------------------------------------------------
 
 
+C:\react\myorg>ng g component todos --project=ui --export
 
-
+--export is to to make sure the newly added component is added into the export list in the module:
+e.g. in ui.module.ts
+@NgModule({
+  imports: [CommonModule],
+  declarations: [TodosComponent],
+  exports: [TodosComponent]
+})
 
 
