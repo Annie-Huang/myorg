@@ -71,6 +71,13 @@ ng e2e frontend-e2e --watch to run e2e tests in the watch mode
 ng e2e frontend-e2e --headless to run e2e tests in the headless mode (used in CI)
 ng g @nrwl/angular:library mylib            # Generate an Angular Library
 
+NgRx:
+ng g @nrwl/angular:ngrx <featurename> --module=<path-to-module> --defaults [options]
+ng g @nrwl/angular:ngrx app --module=apps/<appname>/src/app/app.module.ts --root --minimal
+ng g @nrwl/angular:lib products
+ng g @nrwl/angular:ngrx products --module=libs/products/src/lib/products.module.ts --directory +state/products --syntax=creators --defaults
+
+
 React:
 ng add @nrwl/react                          # Add React Capabilities to a workspace
 ng g @nrwl/react:application myapp          # Generate a React Application
