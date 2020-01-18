@@ -14,8 +14,9 @@ C:\react\myorg>ng serve todos       <<< http://localhost:4200/
 C:\react\myorg>ng serve api         <<< http://localhost:3333/api/todos     << if you only go to
 
 
-Restart TS server: invalidating caches (File | Invalidate caches, Invalidate and restart)
-
+Restart TS server:
+invalidating caches (File | Invalidate caches, Invalidate and restart)
+Or, restart the machine
 
 
 
