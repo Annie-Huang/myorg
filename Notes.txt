@@ -8,6 +8,8 @@ https://nx.dev/angular/fundamentals/build-full-stack-applications
 https://github.com/Annie-Huang/myorg
 
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000770044-Typescript-inspections-sometimes-unreliable-and-or-slow?page=1#comments
+https://github.com/nrwl/nx/issues/1979
+https://github.com/thymikee/jest-preset-angular/releases/tag/v8.0.0
 
 
 C:\react\myorg>ng serve todos       <<< http://localhost:4200/
@@ -37,6 +39,11 @@ C:\react\myorg>ng g @nrwl/workspace:lib data
 C:\react\myorg>ng g @nrwl/angular:lib ui
 C:\react\myorg>ng g component todos --project=ui --export
 C:\react\myorg>npm run dep-graph        <<< http://localhost:4211/
+C:\react\myorg>npm run affected:apps
+C:\react\myorg>npm run affected:libs
+C:\react\myorg>npm run affected:test
+C:\react\myorg>npm run affected:test -- --only-failed
+C:\react\myorg>npm run affected:test -- --parallel
 
 =======================================================
 
@@ -328,3 +335,21 @@ myorg/
 
 C:\react\myorg>npm run dep-graph        <<< http://localhost:4211/
 
+C:\react\myorg>npm run affected:apps
+  <<< looks at what you have changed and uses the dependency graph to figure out which apps can be affected by this change.
+
+C:\react\myorg>npm run affected:libs
+  <<< This command works similarly, but instead of printing the affected apps, it prints the affected libs.
+
+C:\react\myorg>npm run affected:test
+  <<< retest only the projects affected by the change.
+      This got error of:
+        Module jest-preset-angular/AngularSnapshotSerializer.js in the snapshotSerializers option was not found.
+               <rootDir> is: C:\react\myorg\libs\ui
+      Too lazy to fix. The lodgement-ui doesn't not use Jest anyway.
+
+C:\react\myorg>npm run affected:test -- --only-failed
+  <<< One of the projects failed. Instead of retesting every single project on every change, pass --only-failed to only retest the failed ones.
+
+C:\react\myorg>npm run affected:test -- --parallel
+  <<< to test affected projects in parallel
