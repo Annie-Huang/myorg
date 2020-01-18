@@ -44,6 +44,10 @@ C:\react\myorg>npm run affected:libs
 C:\react\myorg>npm run affected:test
 C:\react\myorg>npm run affected:test -- --only-failed
 C:\react\myorg>npm run affected:test -- --parallel
+C:\react\myorg>npm run affected:build
+C:\react\myorg>npm run affected -- --target=build
+C:\react\myorg>npm run affected -- --target=invalid --base=master
+
 
 =======================================================
 
@@ -353,3 +357,16 @@ C:\react\myorg>npm run affected:test -- --only-failed
 
 C:\react\myorg>npm run affected:test -- --parallel
   <<< to test affected projects in parallel
+
+
+----------------------------------------------------
+
+
+C:\react\myorg>npm run affected:build
+C:\react\myorg>npm run affected -- --target=build
+  <<< Both are the same
+      Nx will rebuild todos app. Why didn't it rebuild ui?
+      By default, Nx only builds libraries in the context of an application.
+
+C:\react\myorg>npm run affected -- --target=invalid --base=master
+  <<< No projects to run invalid
