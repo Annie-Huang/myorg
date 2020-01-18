@@ -24,6 +24,8 @@ invalidating caches (File | Invalidate caches, Invalidate and restart)
 Or, restart the machine
 
 
+------------------------
+
 
 C:\react>npx create-nx-workspace@latest myorg
 C:\react\myorg>ng add @nrwl/angular --defaults
@@ -51,6 +53,7 @@ C:\react\myorg>npm run affected:build
 C:\react\myorg>npm run affected -- --target=build
 C:\react\myorg>npm run affected -- --target=invalid --base=master
 
+------------------------
 
 Jest:
 By default, Nx uses Jest for both Angular and Node.js applications
@@ -61,11 +64,26 @@ ng g @nrwl/angular:application frontend --unit-test-runner=karma.
 
 
 Angular:
-ng g @nrwl/angular:application frontend
+ng add @nrwl/angular                        # Add Angular Capabilities to a workspace
+ng g @nrwl/angular:application frontend     # Generate an Angular Application
 ng e2e frontend-e2e to run e2e tests
 ng e2e frontend-e2e --watch to run e2e tests in the watch mode
 ng e2e frontend-e2e --headless to run e2e tests in the headless mode (used in CI)
+ng g @nrwl/angular:library mylib            # Generate an Angular Library
 
+React:
+ng add @nrwl/react                          # Add React Capabilities to a workspace
+ng g @nrwl/react:application myapp          # Generate a React Application
+ng g @nrwl/react:library mylib              # Generate a React Library
+
+
+Typescript Libraries:
+ng g @nrwl/workspace:library mylib          # Generate a Typescript Library
+
+
+By default, libraries are only buildable in the context of an application.
+ng test mylib                               # to test the library.
+ng lint mylib                               # to lint the library
 
 Using Protractor:
 ng g @nrwl/angular:application frontend --e2e-test-runner=protractor
@@ -77,8 +95,8 @@ nx format:check to check the formatted files
 
 
 Nest:
-ng add @nrwl/nest # Add Nest Capabilities to a workspace
-ng g @nrwl/nest:application api
+ng add @nrwl/nest                           # Add Nest Capabilities to a workspace
+ng g @nrwl/nest:application api             # Generate a Nest Application
 ng serve api to serve the application
 ng build api to build the application
 ng test api to test the application
@@ -87,13 +105,19 @@ ng generate @nestjs/schematics:controller mycontroller --sourceRoot=apps/nestapp
 
 
 Using Express
-ng add @nrwl/express # Add Express Capabilities to a workspace
-ng g @nrwl/express:application api # Create an Express Application
+ng add @nrwl/express                        # Add Express Capabilities to a workspace
+ng g @nrwl/express:application api          # Create an Express Application
 
 
 Using Other Frameworks:
 ng add @nrwl/node # Add Node Capabilities to a workspace
 ng g @nrwl/node:application api # Create a Node Application
+
+
+Using Storybook
+nx g @nrwl/angular:storybook-configuration project-name
+nx run project-name:storybook
+nx run project-name-e2e:e2e
 
 
 
