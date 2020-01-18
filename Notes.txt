@@ -61,11 +61,15 @@ Jest:
 ng g application frontend             <<< By default, Nx uses Jest for both Angular and React and Node.js applications
 nx g @nrwl/react:app frontend
 
-Configure Karma, if you choose karma:
+Karma:
 ng g @nrwl/angular:application frontend --unit-test-runner=karma.
+
+Cypress:
+nx g @nrwl/react:application          <<< By default, when creating a new React application, Nx uses Cypress to create the e2e tests project.
 
 
 Angular:
+yarn add --dev @nrwl/angular
 ng add @nrwl/angular                        # Add Angular Capabilities to a workspace
 ng g @nrwl/angular:application frontend     # Generate an Angular Application
 ng e2e frontend-e2e to run e2e tests
@@ -81,9 +85,15 @@ ng g @nrwl/angular:ngrx products --module=libs/products/src/lib/products.module.
 
 
 React:
+yarn add --dev @nrwl/react
 ng add @nrwl/react                          # Add React Capabilities to a workspace
 ng g @nrwl/react:application myapp          # Generate a React Application
 ng g @nrwl/react:library mylib              # Generate a React Library
+
+
+Web Components:
+yarn add --dev @nrwl/web                    # Add Web capabilities to a workspace
+nx g @nrwl/web:application myapp            # Generate a Web application
 
 
 Typescript Libraries:
@@ -104,23 +114,26 @@ nx format:check to check the formatted files
 
 
 Nest:
+yarn add --dev @nrwl/nest
 ng add @nrwl/nest                           # Add Nest Capabilities to a workspace
 ng g @nrwl/nest:application api             # Generate a Nest Application
 ng serve api to serve the application
 ng build api to build the application
 ng test api to test the application
-Adding a Nest app will also add Nest schematics to the workspace:
 ng generate @nestjs/schematics:controller mycontroller --sourceRoot=apps/nestapp/src --path=app
+                                            <<< Adding a Nest app will also add Nest schematics to the workspace
 
 
 Using Express
+yarn add --dev @nrwl/express
 ng add @nrwl/express                        # Add Express Capabilities to a workspace
 ng g @nrwl/express:application api          # Create an Express Application
 
 
 Using Other Frameworks:
-ng add @nrwl/node # Add Node Capabilities to a workspace
-ng g @nrwl/node:application api # Create a Node Application
+yarn add --dev @nrwl/node
+ng add @nrwl/node                           # Add Node Capabilities to a workspace
+ng g @nrwl/node:application api             # Create a Node Application
 
 
 Next.js:
