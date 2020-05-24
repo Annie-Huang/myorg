@@ -181,6 +181,59 @@ nx run project-name:storybook
 nx run project-name-e2e:e2e
 
 
+##################################################################################################
+How do you find out what options are available in nx (since nx documentation is very poor)
+
+!!!! Everything is in workspace.json
+If you look at workspace.json:
+    "ui": {
+      "architect": {
+        "lint": {...}
+        "test": {...}
+        "storybook": {...}
+        "build-storybook": {...}
+      }
+    },
+C:\react\myorg6>nx storybook ui
+C:\react\myorg6>nx storybook ui --help        << help will list out all the sub options you can have with the task
+
+-----
+
+And if you want to know what are the generation options your installed @nrwl/XXX can have:
+1. Check all the @nrwl/XXX you install in your package.json,
+
+2: Then look into the source file in nx git repo:
+  "name": "@nrwl/react",              https://github.com/nrwl/nx/blob/master/packages/react/package.json
+    "extends": ["@nrwl/workspace"],   https://github.com/nrwl/nx/blob/master/packages/react/collection.json
+    init | application | library | component | redux | storybook-configuration | component-story | stories | component-cypress-spec
+
+
+  "name": "@nrwl/web",                https://github.com/nrwl/nx/blob/master/packages/web/package.json
+     "extends": ["@nrwl/workspace"],  https://github.com/nrwl/nx/blob/master/packages/web/collection.json
+      init | application
+
+
+  "name": "@nrwl/workspace",          https://github.com/nrwl/nx/blob/master/packages/workspace/package.json
+                                      https://github.com/nrwl/nx/blob/master/packages/workspace/collection.json
+     workspace | ng-add | preset | move | remove | ng-new | tao-new | library | workspace-schematic
+
+  So you will have this list:
+  nx generate @nrwl/react:application
+  nx generate @nrwl/react:library
+  nx generate @nrwl/react:component
+  nx generate @nrwl/react:redux
+  nx generate @nrwl/react:storybook-configuration
+  nx generate @nrwl/react:component-story
+  nx generate @nrwl/react:stories
+  nx generate @nrwl/react:component-cypress-spec
+  nx generate @nrwl/web:application
+  nx generate @nrwl/workspace:move
+  nx generate @nrwl/workspace:remove
+  nx generate @nrwl/workspace:library
+
+3. Again, further suboptions can be find with --help, e.g.
+  nx generate @nrwl/react:application --help
+
 
 ##################################################################################################
 
