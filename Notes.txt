@@ -231,6 +231,10 @@ And if you want to know what are the generation options your installed @nrwl/XXX
   nx generate @nrwl/workspace:remove
   nx generate @nrwl/workspace:library
 
+  Or you can do:
+  nx list @nrwl/react                             << List all options
+  nx generate @nrwl/react:application --help      << List all sub options
+
 3. Again, further suboptions can be find with --help, e.g.
   nx generate @nrwl/react:application --help
 
